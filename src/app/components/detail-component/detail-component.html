@@ -1,0 +1,61 @@
+<main class="detail-container">
+  @if (request()) {
+  <div class="card">
+
+    <div class="card-images">
+      <img [src]="request()!.img" alt="Product image" class="img-main" />
+      <img [src]="request()!.img2" alt="Product image 2" class="img-secondary" />
+    </div>
+
+    <div class="card-body">
+
+      <div class="card-header">
+        <div class="avatar">{{ request()!.name[0] }}{{ request()!.surname[0] }}</div>
+        <div>
+          <h2>{{ request()!.name }} {{ request()!.surname }}</h2>
+          <span class="subtitle">{{ request()!.phoneNumber }}</span>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <h3>📦 Product</h3>
+        <p class="product-name">{{ request()!.product }}</p>
+        <p class="desc">{{ request()!.desc }}</p>
+      </div>
+
+      <div class="card-section">
+        <h3>📍 Shipping</h3>
+        <p>{{ request()!.address }}</p>
+        <p>{{ request()!.city }}, {{ request()!.country }}</p>
+      </div>
+
+      <div class="card-section dates">
+        <div>
+          <span class="label">Order Date</span>
+          <span>{{ request()!.orderData }}</span>
+        </div>
+        <div>
+          <span class="label">Due Date</span>
+          <span>{{ request()!.orderDue }}</span>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button [routerLink]="['/list']" class="btn-outline">Back</button>
+        <button class="btn-delete" (click)="deleteRequest()">🗑️ Elimina</button>
+        <button class="btn-status" [class.active]="request()!.status === 'da_fare'" (click)="changeStatus('da_fare')">📋
+          Da Fare</button>
+
+        <button class="btn-status" [class.active]="request()!.status === 'in_lavorazione'"
+          (click)="changeStatus('in_lavorazione')">🔧 In Lavorazione</button>
+
+        <button class="btn-status" [class.active]="request()!.status === 'completate'"
+          (click)="changeStatus('completate')">✅ Completate</button>
+      </div>
+
+    </div>
+  </div>
+  } @else {
+  <p class="loading">Loading...</p>
+  }
+</main>

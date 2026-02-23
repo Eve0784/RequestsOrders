@@ -1,0 +1,87 @@
+.header{
+  /* Fondo blanco muy transparente */
+  background: rgba(255, 255, 255, 0.05);
+
+  /* El truco del contraste: desenfoca lo que está detrás */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* Borde sutil para definir la forma */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Sombra para dar profundidad */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+
+  /* Estilos de layout */
+  // position: sticky; // si quiero que quede fijo y el contenido del body scrollera
+  top: 0;
+  padding: 20px;
+  color: #e0e0e0;
+  text-align: center;
+  z-index: 1000;
+
+  /* Opcional: un brillo místico al título */
+  text-shadow: 0 0 15px rgba(223, 43, 226, 0.8);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+}
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px; /* Espacio entre título y nav */
+}
+
+.header h1 {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre imagen y texto */
+  margin: 0;
+}
+
+.header-ico{
+  width: 50px;
+  height: 50px;
+}
+
+
+.demo-section{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 16px;
+  gap: 20px;
+}
+
+.tittle-div{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.home-btn {
+  position: absolute;
+  left: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.home-btn mat-icon {
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+  color: #e0e0e0;
+}
+
+.header-title {
+  margin: 0 auto;
+  text-align: center;
+}

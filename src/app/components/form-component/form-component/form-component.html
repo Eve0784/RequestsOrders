@@ -1,0 +1,97 @@
+<main class="form-container">
+  <div class="form-card">
+
+    <h2>{{ isEditing ? 'Modifica Ordine' : 'Nuovo Ordine' }}</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Cognome</mat-label>
+        <input matInput formControlName="surname" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Telefono</mat-label>
+        <input matInput formControlName="phoneNumber" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Indirizzo</mat-label>
+        <input matInput formControlName="address" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Città</mat-label>
+        <input matInput formControlName="city" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Paese</mat-label>
+        <input matInput formControlName="country" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Prodotto</mat-label>
+        <input matInput formControlName="product" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Descrizione</mat-label>
+        <textarea matInput formControlName="desc" rows="3"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Stato ordine</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="da_fare">Da Fare</mat-option>
+          <mat-option value="in_lavorazione">In Lavorazione</mat-option>
+          <mat-option value="completate">Completate</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- orderData se setea automático, no se muestra -->
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Data Scadenza</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="orderDue" placeholder="Seleziona data" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker" />
+        <mat-datepicker #picker />
+      </mat-form-field>
+
+
+          <!-- imágenes -->
+      <div class="image-upload">
+        <label>Immagine 1</label>
+        <input type="file" accept="image/*" (change)="onImageUpload($event, 'img')"/>
+        @if (form.value.img) {
+          <img [src]="form.value.img" class="preview"/>
+        }
+      </div>
+
+      <div class="image-upload">
+        <label>Immagine 2</label>
+        <input type="file" accept="image/*" (change)="onImageUpload($event, 'img2')"/>
+        @if (form.value.img2) {
+          <img [src]="form.value.img2" class="preview"/>
+        }
+      </div>
+
+      <div class="buttons">
+        <button mat-stroked-button type="button" (click)="cancel()">Annulla</button>
+        <button mat-flat-button type="submit" [disabled]="form.invalid">
+          {{ isEditing ? 'Salva' : 'Crea' }}
+        </button>
+      </div>
+
+      <p style="color: red; font-size: 0.8rem;">
+  {{ form.invalid ? 'Form invalido' : 'Form valido' }}
+</p>
+
+    </form>
+  </div>
+</main>

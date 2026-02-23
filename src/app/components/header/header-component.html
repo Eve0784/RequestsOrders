@@ -1,0 +1,32 @@
+<header class="header">
+  <div>
+    <img class="header-ico" src="request.png" alt="commisioni">
+  </div>
+  <div class="tittle-div">
+    <button routerLink="/list" matIconButton class="home-btn">
+      <mat-icon>home</mat-icon>
+    </button>
+    <h1 class="header-title">Commissioni</h1>
+  </div>
+  <div class="demo-section">
+
+    <button matButton="elevated"
+      routerLink="/list">🔍 Tutti</button>
+
+    <button matButton="elevated"
+      [matBadge]="requestServ.completate().length"
+      matBadgePosition="above after"
+      routerLink="/list/completate">✅Completate</button>
+
+
+    <button matButton="elevated"
+      [matBadge]="requestServ.inLavorazione().length"
+      matBadgePosition="above after"
+      routerLink="/list/in_lavorazione"> 🔧In lavorazione</button>
+
+    <button matButton="elevated"
+      [matBadge]="requestServ.daFare().length"
+      matBadgePosition="above after"
+      routerLink="/list/da_fare">📋Da Fare</button>
+  </div>
+</header>

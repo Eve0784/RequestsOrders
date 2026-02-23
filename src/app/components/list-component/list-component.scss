@@ -1,0 +1,37 @@
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  button {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 105, 180, 0.4);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+
+    &:hover { border-color: #ff69b4; }
+
+    &.active {
+      background: linear-gradient(135deg, #ff69b4, #c2185b);
+      border-color: transparent;
+    }
+  }
+}
+
+.btn-add {
+  display: block;
+  margin: 0 auto 1rem;
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(135deg, #ff69b4, #c2185b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}

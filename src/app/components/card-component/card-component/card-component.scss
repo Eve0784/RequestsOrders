@@ -1,0 +1,15 @@
+::ng-deep mat-card {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  --mdc-outlined-card-container-color: rgba(255, 255, 255, 0.05);
+  --mdc-outlined-card-outline-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+::ng-deep mat-card-title {
+  color: #ffffff !important;
+}
+
+::ng-deep mat-card-subtitle {
+  color: #f879e5 !important;
+  text-shadow: black;
+}

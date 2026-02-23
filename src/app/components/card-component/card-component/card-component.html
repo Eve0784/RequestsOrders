@@ -1,0 +1,11 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ request().name }} {{ request().surname }}</mat-card-title>
+    <mat-card-subtitle>Ordine: {{ request().product }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button matButton [routerLink]="['/detail', request().id]">Dettaglio</button>
+    <button matButton [routerLink]="['/form', request().id]">✏️</button>
+    <button matButton (click)="onDelete()">🗑️</button>
+  </mat-card-actions>
+</mat-card>

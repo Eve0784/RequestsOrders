@@ -1,0 +1,9 @@
+
+<main class="request-list">
+
+  <button matButton="elevated" routerLink="/form">+ Nuovo Ordine</button>
+
+  @for (request of requests(); track request.id) {
+    <app-card-component [request]="request"/>
+  }
+</main>
