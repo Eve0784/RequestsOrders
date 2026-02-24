@@ -18,30 +18,30 @@
       </div>
 
       <div class="card-section">
-        <h3>📦 Product</h3>
+        <h3>📦 Prodotto</h3>
         <p class="product-name">{{ request()!.product }}</p>
         <p class="desc">{{ request()!.desc }}</p>
       </div>
 
       <div class="card-section">
-        <h3>📍 Shipping</h3>
+        <h3>📍 Indirizzo</h3>
         <p>{{ request()!.address }}</p>
         <p>{{ request()!.city }}, {{ request()!.country }}</p>
       </div>
 
       <div class="card-section dates">
         <div>
-          <span class="label">Order Date</span>
+          <span class="label"> Data Ordine</span>
           <span>{{ request()!.orderData | date:'dd/MM/yyyy'}}</span>
         </div>
         <div>
-          <span class="label">Due Date</span>
+          <span class="label">Data Scadenza</span>
           <span>{{ request()!.orderDue | date:'dd/MM/yyyy'}}</span>
         </div>
       </div>
 
       <div class="card-actions">
-        <button [routerLink]="['/list']" class="btn-outline">Back</button>
+        <button [routerLink]="['/list']" class="btn-outline">🡐</button>
         <button class="btn-delete" (click)="deleteRequest()">🗑️ Elimina</button>
         <button class="btn-status" [class.active]="request()!.status === 'da_fare'" (click)="changeStatus('da_fare')">📋
           Da Fare</button>
