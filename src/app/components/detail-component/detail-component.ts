@@ -2,10 +2,11 @@ import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { RequestsService } from '../../service/requests-service';
 import { RequestItem } from '../../model/request';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-detail-component',
-  imports: [RouterLink],
+  imports: [RouterLink, DatePipe],
   templateUrl: './detail-component.html',
   styleUrl: './detail-component.scss',
 })

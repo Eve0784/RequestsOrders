@@ -32,11 +32,11 @@
       <div class="card-section dates">
         <div>
           <span class="label">Order Date</span>
-          <span>{{ request()!.orderData }}</span>
+          <span>{{ request()!.orderData | date:'dd/MM/yyyy'}}</span>
         </div>
         <div>
           <span class="label">Due Date</span>
-          <span>{{ request()!.orderDue }}</span>
+          <span>{{ request()!.orderDue | date:'dd/MM/yyyy'}}</span>
         </div>
       </div>
 

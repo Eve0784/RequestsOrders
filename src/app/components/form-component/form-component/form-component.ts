@@ -23,6 +23,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   templateUrl: './form-component.html',
   styleUrl: './form-component.scss',
 })
+
 export class FormComponent implements OnInit {
   fb = inject(FormBuilder);
   router = inject(Router);
@@ -46,7 +47,7 @@ export class FormComponent implements OnInit {
     status: ['da_fare'],
     orderData: [new Date().toISOString()],
     orderDue: ['', Validators.required],
-     img: [''],
+    img: [''],
     img2: [''],
   });
 
